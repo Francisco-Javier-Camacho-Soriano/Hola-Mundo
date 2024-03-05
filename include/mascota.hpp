@@ -2,29 +2,39 @@
 #include <Alimento.hpp>
 class Mascota
 {
-    private:
+private:
     int Energia;
     int Felicidad;
+    std::string nombre;
 
-    public:
-    Mascota(){
+public:
+    Mascota(std::string nombre)
+    {
         this->Energia = 0;
         this->Felicidad = 0;
+        this->nombre = nombre;
     }
-    ~Mascota(){}
-    void comer(Alimento alimento){
-    Energia += alimento.ExtraerEnergia();
-}
-void Jugar(){
-    Energia -= 1;
-    Felicidad += 1;
+    ~Mascota() {}
+    void comer(Alimento alimento)
+    {
+        Energia += alimento.ExtraerEnergia();
+    }
+    void Jugar()
+    {
+        Energia -= 1;
+        Felicidad += 1;
+    }
+    int LeerFelicidad()
+    {
+        return this->Felicidad;
+    }
+    int LeerEnergia()
+    {
+        return this->Energia;
+    }
 
-}
-int LeerFelicidad(){
-    return this ->Felicidad;
-}
-int LeerEnergia(){
-    return this ->Energia;
-}
+    std::string LeerNombre()
+    {
+        return this->nombre;
+    }
 };
-
